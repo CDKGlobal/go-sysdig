@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **SegmentCondition** | [**[]Condition**](Condition.md) |  | [optional] [default to null]
 **Timespan** | **int64** |  | [optional] [default to null]
 **Severity** | **int32** |  | [optional] [default to null]
-**CreatedOn** | **int32** |  | [optional] [default to null]
+**CreatedOn** | **int64** |  | [optional] [default to null]
 **Enabled** | **bool** |  | [optional] [default to null]
 **NotificationCount** | **int32** |  | [optional] [default to null]
 **TeamId** | **int64** |  | [optional] [default to null]

@@ -34,7 +34,7 @@ type Alert struct {
 
 	Severity int32 `json:"severity,omitempty"`
 
-	CreatedOn int32 `json:"createdOn,omitempty"`
+	CreatedOn int64 `json:"createdOn,omitempty"`
 
 	Enabled bool `json:"enabled,omitempty"`
 
