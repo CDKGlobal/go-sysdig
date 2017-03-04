@@ -30,7 +30,8 @@ Class | Method | HTTP request | Description
  - [Alert](docs/Alert.md)
  - [Alerts](docs/Alerts.md)
  - [Condition](docs/Condition.md)
- - [ErrorModel](docs/ErrorModel.md)
+ - [Errors](docs/Errors.md)
+ - [ModelError](docs/ModelError.md)
 
 
 ## Documentation For Authorization
