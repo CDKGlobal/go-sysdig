@@ -24,5 +24,5 @@ package swagger
 
 type Errors struct {
 
-	Errors []DefinitionsError `json:"errors,omitempty"`
+	Errors []ModelError `json:"errors,omitempty"`
 }
