@@ -28,7 +28,7 @@ type Alert struct {
 
 	Name string `json:"name,omitempty"`
 
-	SegmentCondition []SegmentCondition `json:"segmentCondition,omitempty"`
+	SegmentCondition SegmentCondition `json:"segmentCondition,omitempty"`
 
 	Timespan int64 `json:"timespan,omitempty"`
 
@@ -44,7 +44,7 @@ type Alert struct {
 
 	Version int32 `json:"version,omitempty"`
 
-	SegmentBy []string `json:"segmentBy,omitempty"`
+	SegmentBy []Condition `json:"segmentBy,omitempty"`
 
 	Type_ string `json:"type,omitempty"`
 

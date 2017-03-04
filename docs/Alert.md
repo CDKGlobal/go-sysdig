@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ModifiedOn** | **int64** |  | [optional] [default to null]
 **Name** | **string** |  | [default to null]
-**SegmentCondition** | [**[]SegmentCondition**](SegmentCondition.md) |  | [optional] [default to null]
+**SegmentCondition** | [**SegmentCondition**](SegmentCondition.md) |  | [optional] [default to null]
 **Timespan** | **int64** |  | [optional] [default to null]
 **Severity** | **int32** |  | [optional] [default to null]
 **CreatedOn** | **int64** |  | [optional] [default to null]
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **NotificationCount** | **int32** |  | [optional] [default to null]
 **TeamId** | **int64** |  | [optional] [default to null]
 **Version** | **int32** |  | [optional] [default to null]
-**SegmentBy** | **[]string** |  | [optional] [default to null]
+**SegmentBy** | [**[]Condition**](Condition.md) |  | [optional] [default to null]
 **Type_** | **string** |  | [optional] [default to null]
 **Id** | **int64** |  | [optional] [default to null]
 **Condition** | [**Condition**](Condition.md) |  | [optional] [default to null]
