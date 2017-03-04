@@ -32,6 +32,7 @@ Class | Method | HTTP request | Description
  - [Condition](docs/Condition.md)
  - [Errors](docs/Errors.md)
  - [ModelError](docs/ModelError.md)
+ - [SegmentCondition](docs/SegmentCondition.md)
 
 
 ## Documentation For Authorization

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ModifiedOn** | **int64** |  | [optional] [default to null]
 **Name** | **string** |  | [default to null]
-**SegmentCondition** | [**[]Condition**](Condition.md) |  | [optional] [default to null]
+**SegmentCondition** | [**[]SegmentCondition**](SegmentCondition.md) |  | [optional] [default to null]
 **Timespan** | **int64** |  | [optional] [default to null]
 **Severity** | **int32** |  | [optional] [default to null]
 **CreatedOn** | **int64** |  | [optional] [default to null]

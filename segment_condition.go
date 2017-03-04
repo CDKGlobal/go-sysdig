@@ -22,5 +22,7 @@
 
 package swagger
 
-type Condition struct {
+type SegmentCondition struct {
+
+	Type_ string `json:"type,omitempty"`
 }
