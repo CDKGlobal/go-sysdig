@@ -17,12 +17,12 @@ Put the package under your project folder and add the following in import:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://app.sysdigcloud.com/*
+All URIs are relative to *https://app.sysdigcloud.com/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**CreateAlert**](docs/DefaultApi.md#createalert) | **Post** /api/alerts/{id} | 
-*DefaultApi* | [**GetAlerts**](docs/DefaultApi.md#getalerts) | **Get** /api/alerts | 
+*DefaultApi* | [**CreateAlert**](docs/DefaultApi.md#createalert) | **Post** /alerts/{id} | 
+*DefaultApi* | [**GetAlerts**](docs/DefaultApi.md#getalerts) | **Get** /alerts | 
 
 
 ## Documentation For Models

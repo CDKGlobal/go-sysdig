@@ -1,11 +1,11 @@
 # \DefaultApi
 
-All URIs are relative to *https://app.sysdigcloud.com/*
+All URIs are relative to *https://app.sysdigcloud.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAlert**](DefaultApi.md#CreateAlert) | **Post** /api/alerts/{id} | 
-[**GetAlerts**](DefaultApi.md#GetAlerts) | **Get** /api/alerts | 
+[**CreateAlert**](DefaultApi.md#CreateAlert) | **Post** /alerts/{id} | 
+[**GetAlerts**](DefaultApi.md#GetAlerts) | **Get** /alerts | 
 
 
 # **CreateAlert**

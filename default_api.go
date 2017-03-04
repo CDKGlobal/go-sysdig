@@ -60,7 +60,7 @@ func (a DefaultApi) CreateAlert(id int64) (*Alerts, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/api/alerts/{id}"
+	localVarPath := a.Configuration.BasePath + "/alerts/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -123,7 +123,7 @@ func (a DefaultApi) GetAlerts() (*Alerts, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/api/alerts"
+	localVarPath := a.Configuration.BasePath + "/alerts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
