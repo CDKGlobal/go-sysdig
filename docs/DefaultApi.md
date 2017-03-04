@@ -1,6 +1,6 @@
 # \DefaultApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/jgensler8/sysdig/1.0.0*
+All URIs are relative to *https://app.sysdigcloud.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

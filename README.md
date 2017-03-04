@@ -17,7 +17,7 @@ Put the package under your project folder and add the following in import:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/jgensler8/sysdig/1.0.0*
+All URIs are relative to *https://app.sysdigcloud.com/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
