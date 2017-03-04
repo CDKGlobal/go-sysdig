@@ -22,7 +22,18 @@
 
 package swagger
 
+// You will get an errors Obejct when no Authorization header is present. You will get everything (*except* errors) when an Authorization header is present but invalid.
 type Errors struct {
 
 	Errors []ModelError `json:"errors,omitempty"`
+
+	Timestamp int32 `json:"timestamp,omitempty"`
+
+	Status int32 `json:"status,omitempty"`
+
+	Error_ string `json:"error,omitempty"`
+
+	Message string `json:"message,omitempty"`
+
+	Path string `json:"path,omitempty"`
 }
