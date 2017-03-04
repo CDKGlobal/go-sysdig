@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Errors** | [**[]ModelError**](Error.md) |  | [optional] [default to null]
-**Timestamp** | **int32** |  | [optional] [default to null]
+**Timestamp** | **int64** |  | [optional] [default to null]
 **Status** | **int32** |  | [optional] [default to null]
 **Error_** | **string** |  | [optional] [default to null]
 **Message** | **string** |  | [optional] [default to null]

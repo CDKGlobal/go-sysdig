@@ -24,13 +24,13 @@ package swagger
 
 type Alert struct {
 
-	ModifiedOn int32 `json:"modifiedOn,omitempty"`
+	ModifiedOn int64 `json:"modifiedOn,omitempty"`
 
 	Name string `json:"name,omitempty"`
 
 	SegmentCondition []Condition `json:"segmentCondition,omitempty"`
 
-	Timespan int32 `json:"timespan,omitempty"`
+	Timespan int64 `json:"timespan,omitempty"`
 
 	Severity int32 `json:"severity,omitempty"`
 
@@ -40,7 +40,7 @@ type Alert struct {
 
 	NotificationCount int32 `json:"notificationCount,omitempty"`
 
-	TeamId int32 `json:"teamId,omitempty"`
+	TeamId int64 `json:"teamId,omitempty"`
 
 	Version int32 `json:"version,omitempty"`
 
@@ -48,7 +48,7 @@ type Alert struct {
 
 	Type_ string `json:"type,omitempty"`
 
-	Id int32 `json:"id,omitempty"`
+	Id int64 `json:"id,omitempty"`
 
 	Condition Condition `json:"condition,omitempty"`
 }

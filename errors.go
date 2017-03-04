@@ -27,7 +27,7 @@ type Errors struct {
 
 	Errors []ModelError `json:"errors,omitempty"`
 
-	Timestamp int32 `json:"timestamp,omitempty"`
+	Timestamp int64 `json:"timestamp,omitempty"`
 
 	Status int32 `json:"status,omitempty"`
 
