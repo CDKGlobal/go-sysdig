@@ -28,6 +28,8 @@ type Alert struct {
 
 	Name string `json:"name,omitempty"`
 
+	Description string `json:"description,omitempty"`
+
 	SegmentCondition SegmentCondition `json:"segmentCondition,omitempty"`
 
 	Timespan int64 `json:"timespan,omitempty"`
