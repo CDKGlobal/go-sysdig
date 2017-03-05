@@ -44,11 +44,11 @@ type Alert struct {
 
 	Version int32 `json:"version,omitempty"`
 
-	SegmentBy []Condition `json:"segmentBy,omitempty"`
+	SegmentBy []string `json:"segmentBy,omitempty"`
 
 	Type_ string `json:"type,omitempty"`
 
 	Id int64 `json:"id,omitempty"`
 
-	Condition Condition `json:"condition,omitempty"`
+	Condition string `json:"condition,omitempty"`
 }

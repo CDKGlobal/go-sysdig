@@ -21,15 +21,18 @@ All URIs are relative to *https://app.sysdigcloud.com/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**CreateAlert**](docs/DefaultApi.md#createalert) | **Post** /alerts/{id} | 
+*DefaultApi* | [**CreateAlert**](docs/DefaultApi.md#createalert) | **Post** /alerts | 
+*DefaultApi* | [**DeleteAlert**](docs/DefaultApi.md#deletealert) | **Delete** /alerts/{id} | 
+*DefaultApi* | [**GetAlert**](docs/DefaultApi.md#getalert) | **Get** /alerts/{id} | 
 *DefaultApi* | [**GetAlerts**](docs/DefaultApi.md#getalerts) | **Get** /alerts | 
+*DefaultApi* | [**UpdateAlert**](docs/DefaultApi.md#updatealert) | **Put** /alerts/{id} | 
 
 
 ## Documentation For Models
 
  - [Alert](docs/Alert.md)
+ - [AlertInput](docs/AlertInput.md)
  - [Alerts](docs/Alerts.md)
- - [Condition](docs/Condition.md)
  - [Errors](docs/Errors.md)
  - [ModelError](docs/ModelError.md)
  - [SegmentCondition](docs/SegmentCondition.md)

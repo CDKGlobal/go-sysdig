@@ -1,4 +1,4 @@
-/*
+/* 
  * Sysdig REST API
  *
  * The Sysdig REST API
@@ -22,5 +22,7 @@
 
 package swagger
 
-type Condition struct {
+type AlertInput struct {
+
+	Alert Alert `json:"alert,omitempty"`
 }

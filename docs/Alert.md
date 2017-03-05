@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **NotificationCount** | **int32** |  | [optional] [default to null]
 **TeamId** | **int64** |  | [optional] [default to null]
 **Version** | **int32** |  | [optional] [default to null]
-**SegmentBy** | [**[]Condition**](Condition.md) |  | [optional] [default to null]
+**SegmentBy** | **[]string** |  | [optional] [default to null]
 **Type_** | **string** |  | [optional] [default to null]
 **Id** | **int64** |  | [optional] [default to null]
-**Condition** | [**Condition**](Condition.md) |  | [optional] [default to null]
+**Condition** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
