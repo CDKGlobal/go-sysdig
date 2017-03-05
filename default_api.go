@@ -119,9 +119,9 @@ func (a DefaultApi) CreateAlert(alertInput AlertInput) (*AlertInput, *APIRespons
  * Delete an Alert
  *
  * @param id ID of alert
- * @return *AlertInput
+ * @return void
  */
-func (a DefaultApi) DeleteAlert(id int64) (*AlertInput, *APIResponse, error) {
+func (a DefaultApi) DeleteAlert(id int64) (*APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -160,7 +160,6 @@ func (a DefaultApi) DeleteAlert(id int64) (*AlertInput, *APIResponse, error) {
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	var successPayload = new(AlertInput)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
 	var localVarURL, _ = url.Parse(localVarPath)
@@ -172,10 +171,9 @@ func (a DefaultApi) DeleteAlert(id int64) (*AlertInput, *APIResponse, error) {
 	}
 
 	if err != nil {
-		return successPayload, localVarAPIResponse, err
+		return localVarAPIResponse, err
 	}
-	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
-	return successPayload, localVarAPIResponse, err
+	return localVarAPIResponse, err
 }
 
 /**
