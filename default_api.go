@@ -246,10 +246,9 @@ func (a DefaultApi) GetAlert(id int64) (*Alerts, *APIResponse, error) {
  * 
  * Gets Alerts
  *
- * @param alertInput AlterInput
  * @return *Alerts
  */
-func (a DefaultApi) GetAlerts(alertInput AlertInput) (*Alerts, *APIResponse, error) {
+func (a DefaultApi) GetAlerts() (*Alerts, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -287,8 +286,6 @@ func (a DefaultApi) GetAlerts(alertInput AlertInput) (*Alerts, *APIResponse, err
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	// body params
-	localVarPostBody = &alertInput
 	var successPayload = new(Alerts)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
