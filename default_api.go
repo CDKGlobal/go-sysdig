@@ -119,9 +119,9 @@ func (a DefaultApi) CreateAlert(alertInput AlertInput) (*AlertInput, *APIRespons
  * Delete an Alert
  *
  * @param id ID of alert
- * @return *Alerts
+ * @return *AlertInput
  */
-func (a DefaultApi) DeleteAlert(id int64) (*Alerts, *APIResponse, error) {
+func (a DefaultApi) DeleteAlert(id int64) (*AlertInput, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
@@ -160,7 +160,7 @@ func (a DefaultApi) DeleteAlert(id int64) (*Alerts, *APIResponse, error) {
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	var successPayload = new(Alerts)
+	var successPayload = new(AlertInput)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
 	var localVarURL, _ = url.Parse(localVarPath)
@@ -183,9 +183,9 @@ func (a DefaultApi) DeleteAlert(id int64) (*Alerts, *APIResponse, error) {
  * Get an Alert
  *
  * @param id ID of alert
- * @return *Alerts
+ * @return *AlertInput
  */
-func (a DefaultApi) GetAlert(id int64) (*Alerts, *APIResponse, error) {
+func (a DefaultApi) GetAlert(id int64) (*AlertInput, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
@@ -224,7 +224,7 @@ func (a DefaultApi) GetAlert(id int64) (*Alerts, *APIResponse, error) {
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	var successPayload = new(Alerts)
+	var successPayload = new(AlertInput)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
 	var localVarURL, _ = url.Parse(localVarPath)
@@ -310,9 +310,9 @@ func (a DefaultApi) GetAlerts() (*Alerts, *APIResponse, error) {
  *
  * @param id ID of alert
  * @param alertInput AlterInput
- * @return *Alerts
+ * @return *AlertInput
  */
-func (a DefaultApi) UpdateAlert(id int64, alertInput AlertInput) (*Alerts, *APIResponse, error) {
+func (a DefaultApi) UpdateAlert(id int64, alertInput AlertInput) (*AlertInput, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
@@ -353,7 +353,7 @@ func (a DefaultApi) UpdateAlert(id int64, alertInput AlertInput) (*Alerts, *APIR
 	}
 	// body params
 	localVarPostBody = &alertInput
-	var successPayload = new(Alerts)
+	var successPayload = new(AlertInput)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
 	var localVarURL, _ = url.Parse(localVarPath)

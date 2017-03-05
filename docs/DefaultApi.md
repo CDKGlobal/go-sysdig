@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteAlert**
-> Alerts DeleteAlert($id)
+> AlertInput DeleteAlert($id)
 
 
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Alerts**](Alerts.md)
+[**AlertInput**](AlertInput.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAlert**
-> Alerts GetAlert($id)
+> AlertInput GetAlert($id)
 
 
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Alerts**](Alerts.md)
+[**AlertInput**](AlertInput.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateAlert**
-> Alerts UpdateAlert($id, $alertInput)
+> AlertInput UpdateAlert($id, $alertInput)
 
 
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Alerts**](Alerts.md)
+[**AlertInput**](AlertInput.md)
 
 ### Authorization
 
