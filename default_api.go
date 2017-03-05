@@ -54,9 +54,9 @@ func NewDefaultApiWithBasePath(basePath string) *DefaultApi {
  * Creates a new Alert
  *
  * @param alertInput AlterInput
- * @return *Alerts
+ * @return *AlertInput
  */
-func (a DefaultApi) CreateAlert(alertInput AlertInput) (*Alerts, *APIResponse, error) {
+func (a DefaultApi) CreateAlert(alertInput AlertInput) (*AlertInput, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
@@ -96,7 +96,7 @@ func (a DefaultApi) CreateAlert(alertInput AlertInput) (*Alerts, *APIResponse, e
 	}
 	// body params
 	localVarPostBody = &alertInput
-	var successPayload = new(Alerts)
+	var successPayload = new(AlertInput)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
 	var localVarURL, _ = url.Parse(localVarPath)

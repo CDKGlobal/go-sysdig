@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **CreateAlert**
-> Alerts CreateAlert($alertInput)
+> AlertInput CreateAlert($alertInput)
 
 
 
@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Alerts**](Alerts.md)
+[**AlertInput**](AlertInput.md)
 
 ### Authorization
 
