@@ -1,0 +1,292 @@
+swagger: '2.0'
+info:
+  description: The Sysdig REST API
+  version: 1.0.0
+  title: Sysdig REST API
+  contact:
+    email: info@sysdig.com
+  # license:
+  #   name: Apache 2.0
+  #   url: http://www.apache.org/licenses/LICENSE-2.0.html
+schemes:
+- https
+securityDefinitions:
+  bearerHeader:
+    type: apiKey
+    name: Authorization
+    in: header
+paths:
+  # /user/me:
+  # /api/token:
+  # /api/token/{username}/{id}:
+  # /api/agents/config:
+  # /api/agents/connected:
+  # /api/agents/falco_rules:
+  /alerts:
+    get:
+      description: "Gets Alerts"
+      operationId: "getAlerts"
+      produces:
+        - "application/json"
+      consumes:
+        - "application/json"
+      responses:
+        "200":
+          description: "alerts response"
+          schema:
+            $ref: '#/definitions/Alerts'
+        default:
+          description: "error"
+          schema:
+            $ref: '#/definitions/Errors'
+      security:
+      - bearerHeader: []
+    post:
+      description: "Creates a new Alert"
+      operationId: "createAlert"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+      - in: body
+        name: AlertInput
+        description: "AlterInput"
+        required: true
+        schema:
+          $ref: '#/definitions/AlertInput'
+      responses:
+        "200":
+          description: "create response"
+          schema:
+            $ref: "#/definitions/AlertInput"
+        default:
+          description: "error"
+          schema:
+            $ref: '#/definitions/Errors'
+      security:
+      - bearerHeader: []
+  /alerts/{id}:
+    get:
+      description: "Get an Alert"
+      operationId: "getAlert"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: ID of alert
+          required: true
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: "get response"
+          schema:
+            $ref: "#/definitions/AlertInput"
+        default:
+          description: "error"
+          schema:
+            $ref: '#/definitions/Errors'
+      security:
+      - bearerHeader: []
+    put:
+      description: "Update an Alert"
+      operationId: "updateAlert"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+      - name: id
+        in: path
+        description: ID of alert
+        required: true
+        type: integer
+        format: int64
+      - in: body
+        name: AlertInput
+        description: "AlterInput"
+        required: true
+        schema:
+          $ref: '#/definitions/AlertInput'
+      responses:
+        "200":
+          description: "update response"
+          schema:
+            $ref: "#/definitions/AlertInput"
+        default:
+          description: "error"
+          schema:
+            $ref: '#/definitions/Errors'
+      security:
+      - bearerHeader: []
+    delete:
+      description: "Delete an Alert"
+      operationId: "deleteAlert"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: id
+          in: path
+          description: ID of alert
+          required: true
+          type: integer
+          format: int64
+      responses:
+        "204":
+          description: "delete response (no content)"
+        default:
+          description: "error"
+          schema:
+            $ref: '#/definitions/Errors'
+      security:
+      - bearerHeader: []
+  # /api/notifications:
+  # /api/notificationChannels:
+  # /api/groupConfigurations:
+  # /api/groupConfigurations/explore:
+  # /api/history/timelines:
+  # /api/data:
+  # /api/data/metrics:
+  # /api/data/drilldownDashboardDescriptions:
+  # /api/events:
+  # /api/sysdig:
+  # /api/user:
+  # /api/users:
+  # /api/teams:
+definitions:
+  Errors:
+    description: |-
+      You will get an errors Obejct when no Authorization header is present.
+      You will get everything (*except* errors) when an Authorization header is present but invalid.
+    type: object
+    properties:
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/Error'
+      timestamp:
+        type: integer
+        format: int64
+        example: 1488663970788
+      status:
+        type: integer
+        example: 401
+      error:
+        type: string
+        example: Unauthorized
+      message:
+        type: string
+        example: Bad credentials
+      path:
+        type: string
+        example: /api/alerts
+  Error:
+    type: object
+    required:
+    - reason
+    - message
+    properties:
+      reason:
+        type: string
+        example: "Not authenticated"
+      message:
+        type: string
+        example: "An Authentication object was not found in the SecurityContext"
+  Alerts:
+    type: object
+    required:
+    - alerts
+    properties:
+      alerts:
+        type: "array"
+        items:
+          $ref: '#/definitions/Alert'
+  AlertInput:
+    type: object
+    required:
+    - alert
+    properties:
+      alert:
+        $ref: '#/definitions/Alert'
+  Alert:
+    type: object
+    required:
+    - name
+    - timespan
+    - severity
+    - segmentCondition
+    - condition
+    properties:
+      modifiedOn:
+        type: integer
+        format: int64
+        example: 1488647114000
+      name:
+        type: string
+        example: 'Container CPU limit warning'
+      description:
+        type: string
+        example: 'CPU usage critical'
+      segmentCondition:
+        $ref: '#/definitions/SegmentCondition'
+      timespan:
+        type: integer
+        format: int64
+        example: 300000000
+      severity:
+        type: integer
+        example: 4
+      createdOn:
+        type: integer
+        format: int64
+        example: 1488647114000
+      enabled:
+        type: boolean
+      notificationCount:
+        type: integer
+      notificationChannelIds:
+        type: array
+        items:
+          type: integer
+          format: int64
+      teamId:
+        type: integer
+        format: int64
+        example: 6310
+      version:
+        type: integer
+        example: 1
+      segmentBy:
+        type: array
+        items:
+          type: string
+          example: "host.mac"
+      type:
+        type: string
+        example: "MANUAL"
+      id:
+        type: integer
+        format: int64
+        example: 936455
+      condition:
+        type: string
+        example: "avg(cpu.used.percent) >= 90"
+      filter:
+        type: string
+        example: "agent.tag.location='preprod1-cfi-pdx'"
+  SegmentCondition:
+    type: object
+    required:
+    - type
+    properties:
+      type:
+        type: string
+        example: 'ANY'
+host: app.sysdigcloud.com
+basePath: '/api'
