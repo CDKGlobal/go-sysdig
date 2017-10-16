@@ -48,9 +48,16 @@ type Alert struct {
 
 	SegmentBy []string `json:"segmentBy,omitempty"`
 
+	NotificationChannelIDs []int64 `json:"notificationChannelIds,omitempty"`
+
 	Type_ string `json:"type,omitempty"`
 
 	Id int64 `json:"id,omitempty"`
 
 	Condition string `json:"condition,omitempty"`
+
+	Filter string `json:"filter,omitempty"`
+
+
+
 }
