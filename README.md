@@ -2,8 +2,9 @@ Run the build script from the root folder
 
     
     ./build/build.sh
+    
             OR 
-            
+   
     bash build/build.sh 
    
     
