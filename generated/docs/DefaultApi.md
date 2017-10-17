@@ -12,18 +12,17 @@ Method | HTTP request | Description
 
 
 # **CreateAlert**
-> AlertInput CreateAlert($alertInput)
-
+> AlertInput CreateAlert(ctx, alertInput)
 
 
 Creates a new Alert
 
-
-### Parameters
+### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **alertInput** | [**AlertInput**](AlertInput.md)| AlterInput | 
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **alertInput** | [**AlertInput**](AlertInput.md)| AlterInput | 
 
 ### Return type
 
@@ -41,22 +40,21 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteAlert**
-> DeleteAlert($id)
-
+> DeleteAlert(ctx, id)
 
 
 Delete an Alert
 
-
-### Parameters
+### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int64**| ID of alert | 
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **id** | **int64**| ID of alert | 
 
 ### Return type
 
-void (empty response body)
+ (empty response body)
 
 ### Authorization
 
@@ -70,18 +68,17 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAlert**
-> AlertInput GetAlert($id)
-
+> AlertInput GetAlert(ctx, id)
 
 
 Get an Alert
 
-
-### Parameters
+### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int64**| ID of alert | 
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **id** | **int64**| ID of alert | 
 
 ### Return type
 
@@ -99,14 +96,12 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAlerts**
-> Alerts GetAlerts()
-
+> Alerts GetAlerts(ctx, )
 
 
 Gets Alerts
 
-
-### Parameters
+### Required Parameters
 This endpoint does not need any parameter.
 
 ### Return type
@@ -125,19 +120,18 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **UpdateAlert**
-> AlertInput UpdateAlert($id, $alertInput)
-
+> AlertInput UpdateAlert(ctx, id, alertInput)
 
 
 Update an Alert
 
-
-### Parameters
+### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int64**| ID of alert | 
- **alertInput** | [**AlertInput**](AlertInput.md)| AlterInput | 
+ **ctx** | **context.Context** | context containing the authentication | nil if no authentication
+  **id** | **int64**| ID of alert | 
+  **alertInput** | [**AlertInput**](AlertInput.md)| AlterInput | 
 
 ### Return type
 
