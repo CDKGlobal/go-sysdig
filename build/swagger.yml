@@ -280,6 +280,9 @@ definitions:
       filter:
         type: string
         example: "agent.tag.location='preprod1-cfi-pdx'"
+      autoCreated:
+        type: boolean
+        example: false
   SegmentCondition:
     type: object
     required:
