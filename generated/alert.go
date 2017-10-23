@@ -45,4 +45,6 @@ type Alert struct {
 	Condition string `json:"condition"`
 
 	Filter string `json:"filter,omitempty"`
+
+	AutoCreated bool `json:"autoCreated,omitempty"`
 }
