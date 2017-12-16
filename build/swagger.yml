@@ -151,7 +151,46 @@ paths:
   # /api/groupConfigurations:
   # /api/groupConfigurations/explore:
   # /api/history/timelines:
-  # /api/data:
+  /data:
+    post:
+      description: "Get information about future batch requests"
+      operationId: "queryData"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+      - in: body
+        name: DataQuery
+        description: "Wrapper Data Query"
+        required: true
+        schema:
+          $ref: '#/definitions/DataQueryInput'
+      responses:
+        "200":
+          description: "success setting up query"
+          schema:
+            $ref: '#/definitions/DataQueryOutput'
+  /data/batch:
+    post:
+      description: "Get raw data from a previous data request"
+      operationId: "queryDataBatch"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+      - in: body
+        name: DataQuery
+        description: "Wrapper Data Query"
+        required: true
+        schema:
+          $ref: '#/definitions/DataQueryInput'
+      responses:
+        "200":
+          description: "success running query and gathering data"
+          schema:
+            $ref: '#/definitions/DataQueryOutput'
   # /api/data/metrics:
   # /api/data/drilldownDashboardDescriptions:
   # /api/events:
@@ -291,5 +330,137 @@ definitions:
       type:
         type: string
         example: 'ANY'
+  DataQuery:
+    type: object
+    required:
+    - format
+    - group
+    - metrics
+    # - paging
+    # - scope
+    - time
+    properties:
+      format:
+        type: object
+        required:
+        - type
+        properties:
+          type:
+            type: string
+            example: "data"
+      group:
+        type: object
+        properties:
+          aggregations:
+            type: object
+            example: {
+              agentId: "concat",
+              containerid: "concat",
+              hostMac: "concat",
+              hostName: "concat"
+              }
+          by:
+            type: array
+            items:
+              type: object
+              properties:
+                metric:
+                  type: string
+                  example: field1
+            example: []
+          configuration:
+            type: object
+            properties:
+              groups:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    groupBy:
+                      type: array
+                      items:
+                        type: object
+                        required:
+                        - metric
+                        properties:
+                          metric:
+                            type: string
+                            example: container.image
+                example: [
+                  {
+                  groupBy: [
+                    { metric: 'agent.tag.location'},
+                    { metric: 'host.hostName'},
+                    { metric: 'container.image'}
+                  ]
+                  }
+                ]
+          groupAggregations:
+            type: object
+            example: {
+              agentId: "concat",
+              containerid: "concat",
+              hostMac: "concat",
+              hostName: "concat"
+              }
+      metrics:
+        type: object
+        example: {
+          agentId: "agent.id",
+          containerId: "container.id",
+          hostMac: "host.mac",
+          hostName: "host.hostName"
+          }
+      paging:
+        type: object
+        properties:
+          from:
+            type: integer
+            example: 0
+          to:
+            type: integer
+            example: 9
+      scope:
+        type: string
+        example: "agent.tag.location = 'my-location' and host.hostName = 'ip-10-0-0-123' and container.image = 'nginx:latest'"
+      time:
+        type: object
+        required:
+        - from
+        - to
+        properties:
+          from:
+            type: integer
+            example: 1513439400000000
+            format: int64
+          to:
+            type: integer
+            example: 1513443000000000
+            format: int64
+          sampling:
+            type: string
+            example: null
+      data:
+        type: array
+        items:
+          type: object
+  DataQueryInput:
+    type: object
+    required:
+    - requests
+    properties:
+      requests:
+        type: array
+        items:
+          $ref: "#/definitions/DataQuery"
+  DataQueryOutput:
+    type: object
+    required:
+    - responses
+    properties:
+      responses:
+        type: array
+        items:
+          $ref: "#/definitions/DataQuery"
 host: app.sysdigcloud.com
 basePath: '/api'
