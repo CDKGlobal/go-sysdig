@@ -25,6 +25,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**DeleteAlert**](docs/DefaultApi.md#deletealert) | **Delete** /alerts/{id} | 
 *DefaultApi* | [**GetAlert**](docs/DefaultApi.md#getalert) | **Get** /alerts/{id} | 
 *DefaultApi* | [**GetAlerts**](docs/DefaultApi.md#getalerts) | **Get** /alerts | 
+*DefaultApi* | [**QueryData**](docs/DefaultApi.md#querydata) | **Post** /data | 
+*DefaultApi* | [**QueryDataBatch**](docs/DefaultApi.md#querydatabatch) | **Post** /data/batch | 
 *DefaultApi* | [**UpdateAlert**](docs/DefaultApi.md#updatealert) | **Put** /alerts/{id} | 
 
 
@@ -33,6 +35,17 @@ Class | Method | HTTP request | Description
  - [Alert](docs/Alert.md)
  - [AlertInput](docs/AlertInput.md)
  - [Alerts](docs/Alerts.md)
+ - [DataQuery](docs/DataQuery.md)
+ - [DataQueryFormat](docs/DataQueryFormat.md)
+ - [DataQueryGroup](docs/DataQueryGroup.md)
+ - [DataQueryGroupBy](docs/DataQueryGroupBy.md)
+ - [DataQueryGroupConfiguration](docs/DataQueryGroupConfiguration.md)
+ - [DataQueryGroupConfigurationGroupBy](docs/DataQueryGroupConfigurationGroupBy.md)
+ - [DataQueryGroupConfigurationGroups](docs/DataQueryGroupConfigurationGroups.md)
+ - [DataQueryInput](docs/DataQueryInput.md)
+ - [DataQueryOutput](docs/DataQueryOutput.md)
+ - [DataQueryPaging](docs/DataQueryPaging.md)
+ - [DataQueryTime](docs/DataQueryTime.md)
  - [Errors](docs/Errors.md)
  - [ModelError](docs/ModelError.md)
  - [SegmentCondition](docs/SegmentCondition.md)
